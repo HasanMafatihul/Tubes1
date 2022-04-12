@@ -93,12 +93,7 @@ def load_csv(cd):
                 text1 += j
         data1[i][6] = text1
     return data1
-'''
-data = load.data1
-jumlah = load.jumlah
-skema = input("Skema sorting : ")
-lines = load.lines
-'''
+
 data = load_csv('D:\VS code\TUBES DASPRO\game.csv')
 skema = input("Skema sorting : ")
 if skema == "tahun-" or skema == "tahun+" or skema == "harga-" or skema == "harga+":
