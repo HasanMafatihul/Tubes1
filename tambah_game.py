@@ -8,6 +8,8 @@ def banyak(li):
 
 # Menambah game
 def tambah_game(role, game_arr):
+    if role != "admin":
+        return
     index = int(game_arr[banyak(game_arr)-1][0][4:7]) + 1
     index = f'GAME{index:0>3}'
     temp = game = [index]
