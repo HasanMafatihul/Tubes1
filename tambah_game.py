@@ -6,6 +6,14 @@ def banyak(li):
         x += 1
     return x 
 
+def validasi(game):
+    try:
+        for i in game[3:6]:
+            int(i)
+        return True
+    except:
+        return False
+
 # Menambah game
 def tambah_game(role, game_arr):
     if role != "admin":
@@ -16,7 +24,7 @@ def tambah_game(role, game_arr):
     while True:
         for i in questions:
             game = game + [input(f"Masukkan {i}: ")]
-        if "" in temp:
+        if "" in game or not validasi(game):
             print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")
             game = temp
         else:
