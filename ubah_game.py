@@ -25,4 +25,4 @@ def ubah_game(role, game_arr):
             game_arr[mark][i+1] = temp
     return game_arr
 
-print(ubah_game("admin", [["GAME001", "Halo", "Shooter", "2022", "100.000", "1"]]))
+#print(ubah_game("admin", [["GAME001", "Halo", "Shooter", "2022", "100.000", "1"]]))
