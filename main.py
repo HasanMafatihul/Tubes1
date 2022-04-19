@@ -10,7 +10,7 @@ import normal
 import admin
 
 parser = argparse.ArgumentParser()
-parser.add_argument("folder")
+parser.add_argument("folder", nargs='?', const='')
 args = parser.parse_args()
 cd = args.folder
 
