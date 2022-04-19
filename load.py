@@ -9,7 +9,7 @@ def load_csv(cd):
     for i in lines:
         jumlah += 1
 
-    print(jumlah)
+    #print(jumlah)
     data = ["" for i in range(1, jumlah)]
     for i in range(1, jumlah):
         data [i-1] = lines[i]
@@ -29,11 +29,4 @@ def load_csv(cd):
                 kolom += 1
                 text = ""
 
-parser = argparse.ArgumentParser(description = '')
-parser.add_argument("directory")
-args = parser.parse_args()
-
-if (# tidak ada file di directory):
-    print(f'Folder "{args.directory}" tidak ditemukan.')
-else:
-    load_csv(args.directory)
+    return data1

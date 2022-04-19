@@ -1,0 +1,6 @@
+selesai:
+login, register
+help, save, load, quit
+tambah_game, ubah_game, ubah_stok
+
+otw:
