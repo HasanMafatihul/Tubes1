@@ -37,7 +37,7 @@ print('Selamat datang di antarmuka "Binomo"')
 cmd = [["help", system.help], ["q", system.quit], ["exit", system.quit], ["save", system.save_folder],
        ["login", user.login], ["register", user.register],
        ["tambah_game", admin.tambah_game], ["ubah_game", admin.ubah_game], ["ubah_stok", admin.ubah_stok], ["topup", admin.top_up],
-       ["listing", normal.listing], ["riwayat", normal.riwayat]]
+       ["list_game_toko", normal.listing], ["riwayat", normal.riwayat]]
 
 # Program UI utama
 while True:
