@@ -53,6 +53,21 @@ cmd = [["help", system.help], ["q", system.quit], ["exit", system.quit], ["save"
        ["search_my_game", normal.search_my_game], ["buy_game", normal.buy_game], ["list_game", normal.list_game],
        ["tic_tac_toe", tic_tac_toe], ["magic_conch", magic]]
 
+system.help(data, "guest")
+
+# Sebelum login
+while True:
+    i = input(">>> ")
+    do = essentials.switch(i, cmd)
+    if not do:
+        continue
+    r = do(data, "guest")
+    if r: data = r
+    if data[4] != []:
+        break
+
+system.help(data, data[4][4])
+
 # Program UI utama
 while True:
     i = input(">>> ")
