@@ -25,6 +25,16 @@ else:
     print("Tidak ada nama folder yang diberikan!")
     exit()
 
+try:
+    f = open(cd + "\\game.csv")
+    f = open(cd + "\\user.csv")
+    f = open(cd + "\\riwayat.csv")
+    f = open(cd + "\\kepemilikan.csv")
+    f.close()
+except:
+    print("Folder tidak mengandung file yang diperlukan!")
+    exit()
+
 print("Loading...")
 
 # Deklarasi data

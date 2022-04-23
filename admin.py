@@ -13,7 +13,9 @@ def tambah_game(data, role):
     questions = ["nama game", "kategori", "tahun rilis", "harga", "stok awal"]
 
     if role != "admin":
+        print("Maaf, anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk melakukan hal tersebut.")
         return
+    
     index = int(data[1][-1][0][4:7]) + 1
     index = f'GAME{index:0>3}'
     temp = game = [index]
@@ -34,7 +36,9 @@ def ubah_game(data, role):
     questions = ["nama game", "kategori", "tahun rilis", "harga", "stok awal"]
     
     if role != "admin":
+        print("Maaf, anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk melakukan hal tersebut.")
         return
+    
     index = input("Masukkan ID Game: ")
     for i in range(banyak(data[1])):
         if data[1][i][0] == index:
@@ -51,8 +55,11 @@ def ubah_game(data, role):
 
 # Mengubah stok
 def ubah_stok(data, role):
+    
     if role != "admin":
+        print("Maaf, anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk melakukan hal tersebut.")
         return
+    
     index = input("Masukkan ID Game: ")
     for i in range(banyak(data[1])):
         if data[1][i][0] == index:
@@ -76,8 +83,11 @@ def ubah_stok(data, role):
 
 # Top-up certain user as admin
 def top_up(data, role):
+    
     if role != "admin":
+        print("Maaf, anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk melakukan hal tersebut.")
         return
+
     u_name = input("Masukkan username: ")
     try:
         saldo = int(input("Masukkan saldo: "))

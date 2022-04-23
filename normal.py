@@ -4,7 +4,9 @@ scheme = ["tahun", "harga", ""]
 
 # Mengeluarkan listing game berdasarkan skema sorting tertentu
 def listing(data, role):
+    
     if role != "admin" and role != "user":
+        print('Maaf, anda harus login terlebih dahulu untuk mengirim perintah selain "login"')
         return
     
     l = data[1][1:]
@@ -31,8 +33,11 @@ def listing(data, role):
 
 # Print riwayat pembelian suatu user
 def riwayat(data, role):
+    
     if role != "user":
+        print("Maaf, anda harus menjadi user untuk melakukan hal tersebut.")
         return
+    
     user = data[4][0]
     # Filter game yang telah dibeli
     r = data[2][1:]
@@ -45,7 +50,9 @@ def riwayat(data, role):
 
 # Mencari game di toko
 def search_game_store(data, role):
+    
     if role != "admin" and role != "user":
+        print('Maaf, anda harus login terlebih dahulu untuk mengirim perintah selain "login"')
         return
     
     index = input("Masukkan ID Game: ")
@@ -73,8 +80,10 @@ def search_game_store(data, role):
 
 # Mencari game yang dimiliki
 def search_my_game(data, role):
+    
     if role!='user':
-      return
+        print("Maaf, anda harus menjadi user untuk melakukan hal tersebut.")
+        return
     
     index = input('Masukkan ID Game: ')
     year = input('Masukkan Tahun Rilis Game: ')
@@ -113,8 +122,11 @@ def search_my_game(data, role):
 
 # Fungsi untuk membeli game
 def buy_game(data, role):
+    
     if role != "user":
+        print("Maaf, anda harus menjadi user untuk melakukan hal tersebut.")
         return
+    
     user = data[4][0]
 
     index = input("Masukkan ID Game: ")
@@ -157,7 +169,9 @@ def buy_game(data, role):
 
 # Fungsi untuk melihat game yang dimiliki
 def list_game(data, role):
+    
     if role != "user":
+        print("Maaf, anda harus menjadi user untuk melakukan hal tersebut.")
         return
 
     user = data[4][0]
