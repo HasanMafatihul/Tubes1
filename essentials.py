@@ -7,6 +7,12 @@ def banyak(x):
         c += 1
     return c
 
+def contain(li, x):
+    for i in li:
+        if x == i:
+            return True
+    return False
+
 def hapus(li,x):
     sama = False
     list = []

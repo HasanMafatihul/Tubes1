@@ -1,4 +1,5 @@
 from essentials import banyak
+from essentials import contain
 # Memvalidasi game
 def validasi(game):
     try:
@@ -22,7 +23,7 @@ def tambah_game(data, role):
     while True:
         for i in questions:
             game = game + [input(f"Masukkan {i}: ")]
-        if "" in game or not validasi(game):
+        if contain(game, "") or not validasi(game):
             print("Mohon masukkan semua informasi mengenai game agar dapat disimpan BNMO.")
             game = temp
         else:

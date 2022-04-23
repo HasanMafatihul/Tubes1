@@ -1,4 +1,5 @@
 import essentials
+from essentials import contain
 
 scheme = ["tahun", "harga", ""]
 
@@ -11,7 +12,7 @@ def listing(data, role):
     
     l = data[1][1:]
     skema = input("Skema sorting : ")
-    if skema[:-1] in scheme:
+    if contain(scheme, skema[:-1]):
         if skema[:-1] == "tahun":
             kolom = 3
             z = skema[-1]
@@ -183,7 +184,7 @@ def list_game(data, role):
     # Assign owned with game
     disp = []
     for i in data[1]:
-        if i[0] in owned:
+        if contain(owned, i[0]):
             disp += [i[:-1]]
     # Display game
     if not disp:

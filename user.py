@@ -41,11 +41,14 @@ def register(data, role):
             return
 
     # Mengecek apakah ada karakter yang tidak diizinkan di username
-    allow = [char in allowed for char in u_name]
-    if False in allow:
+    allow = []
+    for char in u_name:
+        allow += [contain(allowed, char)]
+    
+    if contain(allow, False):
         print("Username mengandung karakter yang tidak diizinkan")
         return
-    if ";" in passw:
+    if contain(passw, ";"):
         print("Password mengandung karakter yang tidak diizinkan")
         return
 
