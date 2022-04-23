@@ -1,5 +1,7 @@
 import essentials
 from essentials import contain
+from essentials import slice_str
+from essentials import slice_list
 
 scheme = ["tahun", "harga", ""]
 
@@ -12,11 +14,11 @@ def listing(data, role):
     
     l = data[1][1:]
     skema = input("Skema sorting : ")
-    if contain(scheme, skema[:-1]):
-        if skema[:-1] == "tahun":
+    if contain(scheme, slice_str(skema, j = -1)):
+        if slice_str(skema,j = -1) == "tahun":
             kolom = 3
             z = skema[-1]
-        elif skema[:-1] == "harga":
+        elif slice_str(skema, j = -1) == "harga":
             kolom = 4
             z = skema[-1]
         else:
@@ -41,12 +43,12 @@ def riwayat(data, role):
     
     user = data[4][0]
     # Filter game yang telah dibeli
-    r = data[2][1:]
+    r = slice_list(data[2], 1)
     temp = data[2][0]
-    l = [temp[0:3]+temp[4:5]]
+    l = [slice_list(temp, 0, 3) + slice_list(temp, 4, 5)]
     for i in r:
         if i[3] == user:
-            l += [i[0:3]+i[4:5]]
+            l += [slice_list(i, 0, 3)+slice_list(i, 4, 5)]
     print(essentials.rapikan_matriks(l))
 
 # Mencari game di toko
@@ -98,7 +100,7 @@ def search_my_game(data, role):
             # FIND CORRESPONDING GAME
             for j in data[1]:
                 if j[0] == i[0]:
-                    game_arr += [j[0:5]]
+                    game_arr += [slice_list(j, 0, 5)]
                     break
 
     if not game_arr:
@@ -116,7 +118,7 @@ def search_my_game(data, role):
         found_game += [i]
 
     if found_game:
-        found_game = [data[1][0][0:5]] + found_game
+        found_game = [slice_list(data[1][0], 0, 5)] + found_game
         print(essentials.rapikan_matriks(found_game))
     else:
         print("Tidak ada game pada inventory-mu yang memenuhi kriteria")
@@ -185,12 +187,12 @@ def list_game(data, role):
     disp = []
     for i in data[1]:
         if contain(owned, i[0]):
-            disp += [i[:-1]]
+            disp += [slice_list(i, 0, -1)]
     # Display game
     if not disp:
         print("Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli.")
         return
-    disp = [data[1][0][:-1]] + disp
+    disp = [slice_list(data[1][0],0,-1)] + disp
     print("Daftar game:")
     print(essentials.rapikan_matriks(disp))
     return

@@ -1,9 +1,11 @@
 from essentials import banyak
 from essentials import contain
+from essentials import slice_list
+from essentials import slice_str
 # Memvalidasi game
 def validasi(game):
     try:
-        for i in game[3:6]:
+        for i in slice_list(game, 3, 6):
             int(i)
         return True
     except:
@@ -17,7 +19,7 @@ def tambah_game(data, role):
         print("Maaf, anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke administrator untuk melakukan hal tersebut.")
         return
     
-    index = int(data[1][-1][0][4:7]) + 1
+    index = int(str(slice_list(data[1][-1][0], 4, 7))) + 1
     index = f'GAME{index:0>3}'
     temp = game = [index]
     while True:

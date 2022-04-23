@@ -27,6 +27,23 @@ def hapus(li,x):
             list += [li[j]]
     return list
 
+def slice_list(l, i = 0, j = None):
+    if j == None:
+        j = banyak(l)
+    if j < 0:
+        j = banyak(l) + j
+    o = []
+    for x in range(i, j):
+        o += [l[x]]
+    return o
+
+def slice_str(s, i = 0, j = None):
+    s = slice_list(s, i, j)
+    o = ""
+    for i in s:
+        o += i
+    return o
+
 # Pengganti switch statement untuk python
 def switch(match, case):
     for i in case:
@@ -68,8 +85,8 @@ def urutan(l, y, skema):
             list1 += [int(l[i][y])]
             list2 += [int(l[i][y])]
         else:
-            list1 += [int(l[i][0][4:7])]
-            list2 += [int(l[i][0][4:7])]
+            list1 += [int(slice_str(l[i][0], 4, 7))]
+            list2 += [int(slice_str(l[i][0], 4, 7))]
     
     list_sorted = []
     list_filtered = []

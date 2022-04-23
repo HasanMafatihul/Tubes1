@@ -1,4 +1,5 @@
 import essentials
+from essentials import slice_str
 import os
 
 # Membuka file csv di suatu lokasi (cd)
@@ -18,7 +19,7 @@ def load_csv(cd):
             else:
                 data1 = data1 + [text]
                 text = ""
-        data1 = data1 + [text[:-1]]
+        data1 = data1 + [slice_str(text,0,-1)]
         data = data + [data1]
     
     return data
@@ -47,7 +48,7 @@ def save_folder(data, role):
             y = ""
             for j in i:
                 y += j + ";"
-            y = y[:-1] + "\n"
+            y = slice_str(y,0,-1) + "\n"
             x += y
         o = o + [x]
     data = o

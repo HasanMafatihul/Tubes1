@@ -1,3 +1,5 @@
+from essentials import slice_str
+
 def length(x):
     c = 0
     for i in x:
@@ -14,14 +16,14 @@ def cipher(txt, key):
     c = temp.decode("ascii")
     # Salt
     t = key % size
-    c = c[0:t] + c + c[t:size]
+    c = slice_str(c, 0, t) + c + slice_str(c, t, size)
     return c
 
 def decipher(txt, key):
     size = int(length(txt)/2)
     # Remove salt
     t = key % size
-    txt = txt[0:t] + txt[t+size:length(txt)]
+    txt = slice_str(txt, 0, t) + slice_str(txt, t+size, length(txt))
     # Shift character
     temp = bytearray(txt, "ascii")
     for i in range(length(temp)):
