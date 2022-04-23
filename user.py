@@ -1,4 +1,5 @@
 from essentials import banyak
+from essentials import contain
 import cipher
 key = 8
 
