@@ -1,5 +1,6 @@
 id;nama;kategori;tahun_rilis;harga;stok
 GAME001;Elden Ring;Adventure;2000;100000;6
-GAME002;Halo;FPS;2021;2000;2
+GAME002;Halo;FPS;2021;2000;1
 GAME003;Apa Ini?;Apa;2019;50000;3
 GAME004;YAHOO;Search;2004;5000;9
+GAME005;Mario;Platformer;1998;20000;5

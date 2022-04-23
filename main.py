@@ -8,6 +8,8 @@ import essentials
 import user
 import normal
 import admin
+from tic_tac_toe import tic_tac_toe
+from magic_conch import magic
 
 parser = argparse.ArgumentParser()
 parser.add_argument("folder", nargs='?', const='')
@@ -37,7 +39,9 @@ print('Selamat datang di antarmuka "Binomo"')
 cmd = [["help", system.help], ["q", system.quit], ["exit", system.quit], ["save", system.save_folder],
        ["login", user.login], ["register", user.register],
        ["tambah_game", admin.tambah_game], ["ubah_game", admin.ubah_game], ["ubah_stok", admin.ubah_stok], ["topup", admin.top_up],
-       ["list_game_toko", normal.listing], ["riwayat", normal.riwayat]]
+       ["list_game_toko", normal.listing], ["riwayat", normal.riwayat], ["search_game_at_store", normal.search_game_store],
+       ["search_my_game", normal.search_my_game], ["buy_game", normal.buy_game], ["list_game", normal.list_game],
+       ["tic_tac_toe", tic_tac_toe], ["magic_conch", magic]]
 
 # Program UI utama
 while True:
