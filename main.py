@@ -104,7 +104,7 @@ while selesai == False:
             time.sleep(1)
             continue
         try:
-            r = do(data, "guest")
+            r = do(data, data[4][4])
             if data[4] != []:
                 break
         except:
