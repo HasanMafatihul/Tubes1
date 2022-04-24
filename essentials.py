@@ -126,6 +126,6 @@ def print_perintah(status):
     if status == "admin":
         print("Perintah yang tersedia : \n-> register \n-> tambah_game \n-> ubah_game \n-> ubah_stok \n-> list_game_toko \n-> search_game_at_store \n-> topup \n-> tic_tac_toe \n-> magic_conch \n-> help \n-> save \n-> exit ")
     elif status == "user":
-        print("Perintah yang tersedia : \n-> list_game_toko \n-> buy_game \n-> search_my_game \n-> search_game_at_store \n-> riwayat \n-> tic_tac_toe \n-> magic_conch \n-> help \n-> save \n-> exit ")
+        print("Perintah yang tersedia : \n-> list_game_toko \n-> list_game \n-> buy_game \n-> search_my_game \n-> search_game_at_store \n-> riwayat \n-> tic_tac_toe \n-> magic_conch \n-> help \n-> save \n-> exit ")
     else:
         print("Perintah yang tersedia : \n-> login \n-> tic_tac_toe \n-> magic_conch \n-> help \n-> exit")
