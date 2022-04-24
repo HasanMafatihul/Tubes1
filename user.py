@@ -17,7 +17,7 @@ def login(data):
         if i[1] == user:
             if cipher.decipher(i[3], key) == passw:
                 os.system("cls")
-                print(f"Halo {i[2]}! Selamat datang di antarmuka Program Toko Game K10-08")
+                print(f"Halo {i[2]}! Selamat datang di Program Toko Game K10-08")
                 data[4] = i
                 return data
             else:
