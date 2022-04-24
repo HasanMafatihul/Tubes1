@@ -105,12 +105,9 @@ while selesai == False:
             continue
         try:
             r = do(data, data[4][4])
-            if data[4] != []:
-                break
         except:
             Error
             print("Masukkan tidak valid, silahkan coba lagi")
-        else:
-            r = do(data, data[4][4])
+            
     input("Tekan ENTER untuk keluar")
     os.system('cls')
